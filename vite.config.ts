@@ -53,10 +53,14 @@ export default defineConfig({
     },
   },
   server: {
+    allowedHosts: ["lis.professorsai.org"],
     fs: {
       strict: true,
       deny: ["**/.*"],
     },
+  },
+  preview: {
+    allowedHosts: ["lis.professorsai.org"],
   },
   // Vite automatically loads VITE_* variables from .env files
   // No need to manually define them - they're available via import.meta.env
