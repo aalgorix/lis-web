@@ -1,0 +1,89 @@
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Rocket, CheckCircle, GraduationCap } from 'lucide-react';
+
+const stats = [
+  { value: 'School-Branded', label: 'Experience Layer', color: 'text-primary' },
+  { value: 'Curriculum-First', label: 'Pedagogy Engine', color: 'text-accent' },
+  { value: '24x7', label: 'Learner Support', color: 'text-green-500' },
+  { value: 'Data-Rich', label: 'Academic Insights', color: 'text-orange-500' },
+];
+
+export default function AboutSection() {
+  return (
+    <section id="about" className="py-20 bg-gradient-to-br from-professor-background to-white" data-testid="about-section">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary mb-4 sm:mb-6" data-testid="about-title">
+              A Custom Platform for <span className="text-gradient">Learners International School</span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted mb-6 sm:mb-8 leading-relaxed" data-testid="about-description">
+              This implementation is intentionally tailored for LIS. From the visual identity to the learning workflows,
+              every module is designed to help the school deliver a premium academic experience for students,
+              parents, teachers, and school leadership.
+            </p>
+            
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+              {stats.map((stat, index) => (
+                <Card key={index} className="text-center p-4 sm:p-6 bg-white shadow-lg" data-testid={`stat-card-${index}`}>
+                  <CardContent className="p-0">
+                    <div className={`text-2xl sm:text-3xl font-bold ${stat.color} mb-1 sm:mb-2`}>{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-muted">{stat.label}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <Button 
+              size="lg"
+              className="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transform hover:scale-105 transition-all"
+              data-testid="button-explore-technology"
+            >
+              <Rocket className="w-5 h-5 mr-2" />
+              Explore School Capabilities
+            </Button>
+          </div>
+          
+          <div className="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+              alt="Modern education technology" 
+              className="rounded-2xl shadow-2xl"
+              data-testid="about-image"
+            />
+            
+            {/* Overlay Cards */}
+            <Card className="absolute -top-4 sm:-top-8 -left-4 sm:-left-8 bg-white p-3 sm:p-6 shadow-xl" data-testid="overlay-card-ai">
+              <CardContent className="p-0">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center">
+                    <CheckCircle className="text-white w-4 h-4 sm:w-6 sm:h-6" />
+                  </div>
+                  <div>
+                    <div className="text-sm sm:text-base font-semibold text-secondary">AI Powered</div>
+                    <div className="text-xs sm:text-sm text-muted">Smart Learning</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="absolute -bottom-4 sm:-bottom-8 -right-4 sm:-right-8 bg-white p-3 sm:p-6 shadow-xl" data-testid="overlay-card-adaptive">
+              <CardContent className="p-0">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-full flex items-center justify-center">
+                    <GraduationCap className="text-white w-4 h-4 sm:w-6 sm:h-6" />
+                  </div>
+                  <div>
+                    <div className="text-sm sm:text-base font-semibold text-secondary">Adaptive</div>
+                    <div className="text-xs sm:text-sm text-muted">Personalized</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
