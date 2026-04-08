@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Compass, Landmark, Sparkles, Users } from 'lucide-react';
 import { Link } from 'wouter';
-import courseVideo from '@assets/video (2).mp4';
 
 export default function HeroSection() {
   const scrollToNext = () => {
@@ -13,19 +12,15 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden" data-testid="hero-section">
-      {/* Background Video */}
-      <video
-        autoPlay
-        muted 
-        loop 
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 scale-105"
-        data-testid="hero-background-video"
-      >
-        <source src={courseVideo} type="video/mp4" />
-      </video>
+      {/* Background Image */}
+      <img
+        src="/large2.jpg"
+        alt="Learners International School"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        data-testid="hero-background-image"
+      />
 
-      {/* Video Overlay */}
+      {/* Image Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#04142b]/85 via-[#071f41]/70 to-[#0a2f5f]/85 z-10" />
 
       <div className="relative z-20 min-h-screen flex items-center">

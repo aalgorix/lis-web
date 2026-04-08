@@ -2,15 +2,27 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import logoPath from "@assets/leaners-international-school-logo.png";
 // import { useNavigate } from "react-router-dom";
 
 export default function Navigation() {
   // const navigate = useNavigate();
 
+  const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [sessionUser, setSessionUser] = useState<null | { username?: string; email?: string }>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
   // Fetch session to determine if an Account button should be shown globally
@@ -32,11 +44,15 @@ export default function Navigation() {
 
   const textColor = 'text-white';
   const hoverColor = 'hover:text-white';
+  const isTransparentNavbar = location === '/' && !isScrolled && !isMenuOpen;
+  const navbarContainerClass = isTransparentNavbar
+    ? 'flex justify-between items-center py-1.5 px-4 sm:py-1.5 bg-transparent rounded-full'
+    : 'flex justify-between items-center py-1.5 px-4 sm:py-1.5 bg-black/90 rounded-full';
 
   return (
     <nav className={`fixed top-2 left-0 right-0 z-50 transition-all duration-300 bg-transparent`} data-testid="main-navigation">
       <div className="max-w-10xl mx-auto  px-4 sm:px-6 lg:px-10">
-        <div className="flex justify-between items-center py-1.5 px-4 sm:py-1.5 bg-black/90 rounded-full">
+        <div className={navbarContainerClass}>
           <div className="flex items-center" data-testid="logo-brand">
             <Link href="/">
               <img 

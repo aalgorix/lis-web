@@ -8,7 +8,7 @@ type MockUser = {
 
 type MockAuthRole = "student" | "teacher" | "admin";
 
-type MockAuthState = {
+type MockAuthState = { 
   authenticated: boolean;
   role: MockAuthRole;
 };
