@@ -47,7 +47,9 @@ export default function Navigation() {
   const isTransparentNavbar = location === '/' && !isScrolled && !isMenuOpen;
   const navbarContainerClass = isTransparentNavbar
     ? 'flex justify-between items-center py-1.5 px-4 sm:py-1.5 bg-transparent rounded-full'
-    : 'flex justify-between items-center py-1.5 px-4 sm:py-1.5 bg-black/90 rounded-full';
+    : isScrolled
+      ? 'flex justify-between items-center py-1.5 px-4 sm:py-1.5 bg-black/25 border border-white/20 shadow-lg rounded-full backdrop-blur-md'
+      : 'flex justify-between items-center py-1.5 px-4 sm:py-1.5 bg-black/90 rounded-full';
 
   return (
     <nav className={`fixed top-2 left-0 right-0 z-50 transition-all duration-300 bg-transparent`} data-testid="main-navigation">
