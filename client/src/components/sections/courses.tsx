@@ -6,12 +6,12 @@ import { Link } from 'wouter';
 
 const courseCategories = [
   {
-    title: 'NCERT Core Subjects',
-    description: 'Board-aligned NCERT learning tracks for school students with strong concept foundations.',
+    title: 'Cambridge & IB Core Subjects',
+    description: 'Board-aligned Cambridge and IB learning tracks for strong conceptual foundations and international readiness.',
     icon: Notebook,
-    courses: ['NCERT English', 'NCERT Hindi', 'NCERT Mathematics', 'NCERT Science', 'NCERT Social Science'],
+    courses: ['Cambridge English', 'IB English', 'Cambridge Mathematics', 'IB Mathematics', 'Cambridge Science'],
     color: 'from-[#155e75] to-[#0e7490]',
-    href: '/courses?category=schools&item=ncert-core'
+    href: '/courses?category=schools&item=cambridge-ib-core'
   },
   {
     title: 'K-12 School Pathways',
@@ -25,7 +25,7 @@ const courseCategories = [
     title: 'Global Curriculum Programs',
     description: 'Learning journeys tuned for international pedagogies and cross-country school systems.',
     icon: BookOpen,
-    courses: ['CBSE/ICSE Support', 'Cambridge Companion', 'IB Preparation', 'English Proficiency', 'Academic Writing'],
+    courses: ['Cambridge Primary', 'Cambridge Lower Secondary', 'IB MYP Preparation', 'IB DP Readiness', 'Academic Writing'],
     color: 'from-[#0d4f8b] to-[#0f67a6]',
     href: '/courses?category=language'
   },

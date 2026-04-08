@@ -208,7 +208,7 @@ export default function SuggestionsPage() {
                         </Label>
                         <Input
                           id="syllabus"
-                          placeholder="e.g., CBSE, IB, A-Levels"
+                          placeholder="e.g., Cambridge, IB, IGCSE, A-Levels"
                           value={formData.syllabus}
                           onChange={(e) => setFormData({ ...formData, syllabus: e.target.value })}
                           className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500"

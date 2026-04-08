@@ -460,7 +460,7 @@ export default function SignUp() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="schoolAffiliation" className="text-white/90 font-medium">Affiliation</Label>
-                        <Input id="schoolAffiliation" name="schoolAffiliation" type="text" placeholder="e.g. CBSE, ICSE, State Board" value={formData.schoolAffiliation} onChange={handleInputChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-accent focus:ring-accent" />
+                        <Input id="schoolAffiliation" name="schoolAffiliation" type="text" placeholder="e.g. Cambridge, IB, IGCSE, A-Levels" value={formData.schoolAffiliation} onChange={handleInputChange} className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-accent focus:ring-accent" />
                       </div>
                     </div>
                   )}

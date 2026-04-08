@@ -39,12 +39,12 @@ const demoTeacher: MockUser = {
 
 const demoCourses = [
   {
-    id: "ncert-english",
-    title: "NCERT English",
-    level: "NCERT",
-    description: "Reading, writing, grammar, and comprehension aligned to NCERT curriculum.",
-    tag: "NCERT",
-    country: "INDIA",
+    id: "cambridge-english",
+    title: "Cambridge English",
+    level: "Cambridge",
+    description: "Reading, writing, and language analysis aligned to Cambridge curriculum expectations.",
+    tag: "Cambridge",
+    country: "INTERNATIONAL",
     price: 0,
     currency: "INR",
     isFree: true,
@@ -52,12 +52,12 @@ const demoCourses = [
     imageUrl: null,
   },
   {
-    id: "ncert-hindi",
-    title: "NCERT Hindi",
-    level: "NCERT",
-    description: "Vyakaran, pathya samagri, and language skills for NCERT-aligned classes.",
-    tag: "NCERT",
-    country: "INDIA",
+    id: "ib-english-language-literature",
+    title: "IB English Language & Literature",
+    level: "IB",
+    description: "Textual interpretation, writing skills, and critical thinking aligned to IB standards.",
+    tag: "IB",
+    country: "INTERNATIONAL",
     price: 0,
     currency: "INR",
     isFree: true,
@@ -65,12 +65,12 @@ const demoCourses = [
     imageUrl: null,
   },
   {
-    id: "ncert-mathematics",
-    title: "NCERT Mathematics",
-    level: "NCERT",
-    description: "Concept-first Mathematics with chapter practice and test readiness.",
-    tag: "NCERT",
-    country: "INDIA",
+    id: "cambridge-mathematics",
+    title: "Cambridge Mathematics",
+    level: "Cambridge",
+    description: "Concept-first mathematics with application, fluency, and problem-solving progression.",
+    tag: "Cambridge",
+    country: "INTERNATIONAL",
     price: 0,
     currency: "INR",
     isFree: true,
@@ -78,12 +78,12 @@ const demoCourses = [
     imageUrl: null,
   },
   {
-    id: "ncert-science",
-    title: "NCERT Science",
-    level: "NCERT",
-    description: "Physics, Chemistry, and Biology foundations for school learners.",
-    tag: "NCERT",
-    country: "INDIA",
+    id: "ib-mathematics",
+    title: "IB Mathematics",
+    level: "IB",
+    description: "Reasoning, modelling, and mathematical communication aligned to IB pathways.",
+    tag: "IB",
+    country: "INTERNATIONAL",
     price: 0,
     currency: "INR",
     isFree: true,
@@ -91,12 +91,12 @@ const demoCourses = [
     imageUrl: null,
   },
   {
-    id: "ncert-social-science",
-    title: "NCERT Social Science",
-    level: "NCERT",
-    description: "History, Civics, Geography, and Economics in NCERT sequence.",
-    tag: "NCERT",
-    country: "INDIA",
+    id: "cambridge-science",
+    title: "Cambridge Science",
+    level: "Cambridge",
+    description: "Integrated Science foundation across Biology, Chemistry, and Physics concepts.",
+    tag: "Cambridge",
+    country: "INTERNATIONAL",
     price: 0,
     currency: "INR",
     isFree: true,
@@ -104,12 +104,12 @@ const demoCourses = [
     imageUrl: null,
   },
   {
-    id: "ncert-computer-applications",
-    title: "NCERT Computer Applications",
-    level: "NCERT",
-    description: "Digital literacy, coding basics, and practical computing skills.",
-    tag: "NCERT",
-    country: "INDIA",
+    id: "ib-integrated-sciences",
+    title: "IB Integrated Sciences",
+    level: "IB",
+    description: "Inquiry-based scientific exploration and interdisciplinary understanding for IB learners.",
+    tag: "IB",
+    country: "INTERNATIONAL",
     price: 0,
     currency: "INR",
     isFree: true,
@@ -119,11 +119,11 @@ const demoCourses = [
 ];
 
 const demoCourseDetail = {
-  id: "ncert-english",
-  title: "NCERT English",
-  course_title: "NCERT English",
-  level: "NCERT",
-  description: "Frontend-only course detail for NCERT preview.",
+  id: "cambridge-english",
+  title: "Cambridge English",
+  course_title: "Cambridge English",
+  level: "Cambridge",
+  description: "Frontend-only course detail for Cambridge and IB preview.",
   modules: [
     {
       id: 1,
@@ -253,7 +253,7 @@ function handleMockApi(url: URL, init?: RequestInit): Response {
   }
 
   if (/^\/api\/course\/[^/]+$/.test(path)) {
-    const id = decodeURIComponent(path.split("/").pop() || "ncert-english");
+    const id = decodeURIComponent(path.split("/").pop() || "cambridge-english");
     const matchedCourse = demoCourses.find((course) => course.id === id);
     return json({
       ...demoCourseDetail,

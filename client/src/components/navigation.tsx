@@ -107,6 +107,15 @@ export default function Navigation() {
               </button>
             </Link>
 
+            <a href="/#faq">
+              <button
+                className={`${textColor} ${hoverColor} transition-colors hover:scale-110`}
+                data-testid="nav-faq"
+              >
+                FAQ
+              </button>
+            </a>
+
           </div>
           
           {/* Right side buttons */}
@@ -195,6 +204,10 @@ export default function Navigation() {
                 Blog
               </button>
             </Link>
+
+            <a href="/#faq" className="block py-2 text-white hover:text-white transition-colors w-full text-left border-b border-white/20 pb-2 mb-2">
+              FAQ
+            </a>
 
             {!sessionUser && (
               <Link href="/signin/student">

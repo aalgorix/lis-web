@@ -417,7 +417,7 @@ export default function ProfileCompletionModal({
                       id="schoolAffiliation"
                       value={profileData.schoolAffiliation}
                       onChange={(e) => setProfileData({ ...profileData, schoolAffiliation: e.target.value })}
-                      placeholder="e.g., CBSE, ICSE, State Board"
+                      placeholder="e.g., Cambridge, IB, IGCSE, A-Levels"
                     />
                   </div>
                 </>
